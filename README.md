@@ -34,8 +34,8 @@ ai-agent-langgraph/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/timomoebes/ai-agent-langgraph.git
-   cd ai-agent-langgraph/simple-agent
+   git clone https://github.com/timomoebes/ai-research-agent-langgraph.git
+   cd ai-research-agent-langgraph/simple-agent
    ```
 
 2. Set up a virtual environment (recommended):

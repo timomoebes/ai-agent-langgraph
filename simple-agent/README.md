@@ -12,18 +12,24 @@ This is a simple AI agent implementation that uses LangGraph for orchestration, 
 
 ## 🚀 Quick Start
 
-1. **Install dependencies**:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/timomoebes/ai-research-agent-langgraph.git
+   cd ai-research-agent-langgraph/simple-agent
+   ```
+
+2. **Install dependencies**:
    ```bash
    pip install -e .
    ```
 
-2. **Set up environment variables**:
+3. **Set up environment variables**:
    ```bash
    cp .env.example .env
    # Edit .env with your API keys
    ```
 
-3. **Run the agent**:
+4. **Run the agent**:
    ```bash
    python main.py
    ```
