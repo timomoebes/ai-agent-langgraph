@@ -30,8 +30,16 @@ async def main():
         async with ClientSession(read, write) as session:
             
             await session.initialize()
-            tools = await load_mcp_tools(session)
-            agent = create_react_agent(model, tools)
+            # Load all tools first
+            all_tools = await load_mcp_tools(session)
+            
+            # Filter to only keep the essential tools we need
+            essential_tools = [
+                tool for tool in all_tools 
+                if tool.name in ["firecrawl_search", "firecrawl_scrape"]
+            ]
+            
+            agent = create_react_agent(model, essential_tools)
 
             messages = [
                 {
@@ -40,7 +48,7 @@ async def main():
                 }
             ]
             
-            print("Available tools -", *[tool.name for tool in tools])
+            print("Available tools -", *[tool.name for tool in essential_tools])
             print("-" * 60)
 
             while True:
